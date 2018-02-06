@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 703506746}
   - component: {fileID: 703506745}
   - component: {fileID: 703506744}
+  - component: {fileID: 703506749}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -337,6 +338,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &703506749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 703506743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8510cb3faf20a45a9ec1056999436d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go_thingToBeFollowed: {fileID: 1308424213}
+  fl_distanceOn_zAxis: 10
+  fl_distanceOn_xAxis: -3
+  fl_distanceOn_yAxis: -3
+  bl_pointAt: 1
 --- !u!1 &930305862
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +419,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1308424213 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1754738463482992, guid: 700270cd27528ea4894c994451a71cab,
+    type: 2}
+  m_PrefabInternal: {fileID: 106975066}
 --- !u!1 &1694062133
 GameObject:
   m_ObjectHideFlags: 0
