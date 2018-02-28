@@ -8,6 +8,7 @@ public class PT_TaskManager : MonoBehaviour {
     public int ProgressNumber;
     public GameObject eventTrigger;
     private int LastProgressNumber;
+    private GameObject currentTarget;
 
 	// Use this for initialization
 	void Start () {
@@ -21,16 +22,19 @@ public class PT_TaskManager : MonoBehaviour {
 		
 	}
 
-    public void TaskCompleted()
+    public void TaskCompleted(int CompleteTask)
     {
+        print("Completed " + CompleteTask.ToString());
         OnSucceedEvent();
     }
 
     private void GenerateNewTask(int TaskIndex)
     {
+        print("New Index " + TaskIndex.ToString());
         LastProgressNumber = ProgressNumber;
-        Instantiate(eventTrigger, Tasks[TaskIndex].Location, Quaternion.identity);
-
+        currentTarget = Instantiate(eventTrigger, Tasks[TaskIndex].Location, Quaternion.identity);
+        currentTarget.GetComponent<PT_Event_Trigger>().EventNumber = TaskIndex;
+        ProgressNumber = TaskIndex;
         OnStartEvent();
 
     }
@@ -42,6 +46,7 @@ public class PT_TaskManager : MonoBehaviour {
 
     public void OnSucceedEvent()
     {
+        Destroy(currentTarget);
         GenerateNewTask(Tasks[ProgressNumber].SuccessNextProgress);
     }
 

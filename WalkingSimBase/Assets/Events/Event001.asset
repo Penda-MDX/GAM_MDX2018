@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696f2588e4eefbc47894a1d493ba27ea, type: 3}
+  m_Name: Event001
+  m_EditorClassIdentifier: 
+  Location: {x: 568, y: 11, z: 535}
+  ActivityType: Waypoint
+  isCounter: 0
+  Count: 0
+  TimeToComplete: 0
+  hasStarted: 0
+  SuccessNextProgress: 1
+  FailNextProgress: 0
+  TargetObject: {fileID: 0}
+  SpawnPoints: []
+  SpawnedObject: {fileID: 1931158520298504, guid: 5e375c5b13bc0fa42b94dee97bab1249,
+    type: 2}
+  DestroyObjectsOnCompletion: 0

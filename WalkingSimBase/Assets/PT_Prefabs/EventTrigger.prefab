@@ -71,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4801576294795542}
   - component: {fileID: 65646609816866362}
+  - component: {fileID: 114417914997920720}
   m_Layer: 0
   m_Name: EventTrigger
   m_TagString: Untagged
@@ -220,6 +221,18 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114417914997920720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931158520298504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab32ad8b15253d44498a3e20d480ecd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventNumber: 0
 --- !u!136 &136542317405121052
 CapsuleCollider:
   m_ObjectHideFlags: 1
