@@ -8,21 +8,24 @@ public class PT_Event : ScriptableObject
 
     public Vector3 Location;
     public string ActivityType;
-    public bool isCounter;
-    public int Count;
-    public float TimeToComplete;
-    public bool hasStarted;
+    public string Description;
+    public string QuestName;
     public int SuccessNextProgress;
     public int FailNextProgress;
 
     public GameObject TargetObject;
-    public Vector3[] SpawnPoints;
     public GameObject SpawnedObject;
-    public bool DestroyObjectsOnCompletion;
 
     private void OnEnable()
     {
         //initialize
+        if (TargetObject != null)
+        {
+            if(Location == Vector3.zero)
+            {
+                Location = TargetObject.transform.position;
+            }
+        }
 
     }
 
