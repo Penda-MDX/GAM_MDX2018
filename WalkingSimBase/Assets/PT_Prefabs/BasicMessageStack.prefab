@@ -276,8 +276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MessageCanvas: {fileID: 1579381315857566}
-  MessageText: 
   OnScreenText: {fileID: 114332701717543704}
+  showParent: {fileID: 0}
+  showImage: {fileID: 114316670466636780}
 --- !u!114 &114736447625757214
 MonoBehaviour:
   m_ObjectHideFlags: 1

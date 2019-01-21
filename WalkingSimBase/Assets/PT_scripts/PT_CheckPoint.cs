@@ -7,6 +7,8 @@ public class PT_CheckPoint : MonoBehaviour {
     public Material mt_Blue;
     public Material mt_Red;
 
+    public GameObject[] thingsToBeReset;
+
     private Renderer _Renderer;
     private PT_LevelManager levelManagerReference;
     // Use this for initialization
@@ -32,6 +34,13 @@ public class PT_CheckPoint : MonoBehaviour {
             //print("Change");
             _Renderer.material = mt_Blue;
             levelManagerReference.lastGoodCheckpoint = transform;
+        }
+    }
+    public void ResetThisZone()
+    {
+        foreach(GameObject thingReseting in thingsToBeReset)
+        {
+            thingReseting.SendMessage("ResetMe", SendMessageOptions.DontRequireReceiver);
         }
     }
 }
