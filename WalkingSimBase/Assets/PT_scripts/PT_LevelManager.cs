@@ -25,14 +25,20 @@ public class PT_LevelManager : MonoBehaviour {
 	void Update () {
         if (timeComplete < Time.time)
         {
-            messageBox.gameObject.SetActive(false);
+            if (messageTextonScreen != null)
+            {
+                messageBox.gameObject.SetActive(false);
+            }
         }
 	}
 
     public void ShowMessage(string currentMessage)
     {
-        messageTextonScreen.text = currentMessage;
-        messageBox.gameObject.SetActive(true);
-        timeComplete = Time.time + timeOnScreen;
+        if (messageTextonScreen != null)
+        {
+            messageTextonScreen.text = currentMessage;
+            messageBox.gameObject.SetActive(true);
+            timeComplete = Time.time + timeOnScreen;
+        }
     }
 }
