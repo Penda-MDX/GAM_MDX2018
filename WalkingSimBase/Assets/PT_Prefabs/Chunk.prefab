@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33967651622537332}
   - component: {fileID: 23537818613623026}
   - component: {fileID: 65082661078269044}
+  - component: {fileID: 114694376256488812}
   m_Layer: 0
   m_Name: leftTriggerCube
   m_TagString: Untagged
@@ -37,6 +38,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4581494104623882}
+  - component: {fileID: 114163150359277196}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -55,6 +57,7 @@ GameObject:
   - component: {fileID: 33407457695363524}
   - component: {fileID: 23949988369410148}
   - component: {fileID: 65599597674267750}
+  - component: {fileID: 114060716872702140}
   m_Layer: 0
   m_Name: rightTriggerCube
   m_TagString: Untagged
@@ -70,6 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4475457566736240}
+  - component: {fileID: 114478743954908482}
   m_Layer: 0
   m_Name: Node01
   m_TagString: Untagged
@@ -85,6 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4126039615819588}
+  - component: {fileID: 114535428493972058}
   m_Layer: 0
   m_Name: Node02
   m_TagString: Untagged
@@ -269,3 +274,60 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114060716872702140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1611149020451582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e4bce8af344144aafb3ba7168fce98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedNode: {fileID: 114535428493972058}
+--- !u!114 &114163150359277196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152396292478748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72f0b0b9bf3c7fc40bc6fdaf75a53fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114478743954908482
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1619448877037190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf1a3ca1fc9ffd4eb1fec2cb817537f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114535428493972058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804253864109978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbf1a3ca1fc9ffd4eb1fec2cb817537f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114694376256488812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146177108341972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23e4bce8af344144aafb3ba7168fce98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connectedNode: {fileID: 114478743954908482}

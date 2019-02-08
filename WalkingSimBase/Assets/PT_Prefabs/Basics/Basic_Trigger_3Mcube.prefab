@@ -8,32 +8,32 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications: []
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1003982844950172}
-  m_IsPrefabParent: 1
---- !u!1 &1003982844950172
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1180509076724586}
+  m_IsPrefabAsset: 1
+--- !u!1 &1180509076724586
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
+  serializedVersion: 6
   m_Component:
-  - component: {fileID: 4101407890977132}
-  - component: {fileID: 65631755841864210}
-  - component: {fileID: 114785279603587692}
+  - component: {fileID: 4561655726925646}
+  - component: {fileID: 65906517452936644}
+  - component: {fileID: 114420082716431058}
   m_Layer: 0
-  m_Name: Basic_Trigger_3Mcube_Task_Linked
+  m_Name: Basic_Trigger_3Mcube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4101407890977132
+--- !u!4 &4561655726925646
 Transform:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1003982844950172}
+  m_GameObject: {fileID: 1180509076724586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 675.2, y: 19.88, z: 552.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,29 +41,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65631755841864210
+--- !u!65 &65906517452936644
 BoxCollider:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1003982844950172}
+  m_GameObject: {fileID: 1180509076724586}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114785279603587692
+--- !u!114 &114420082716431058
 MonoBehaviour:
   m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1003982844950172}
+  m_GameObject: {fileID: 1180509076724586}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e5d0ca018b1324bb49e3bda74f1b03, type: 3}
+  m_Script: {fileID: 11500000, guid: 200c96b0c1b2bd646a6c19c3e4ce023f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bl_enable: 0
   objectToActivate: {fileID: 0}
-  RequiredProgressNumber: 5

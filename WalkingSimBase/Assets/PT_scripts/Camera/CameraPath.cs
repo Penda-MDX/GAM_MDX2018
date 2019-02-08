@@ -6,23 +6,39 @@ public class CameraPath : MonoBehaviour {
 
     public GameObject[] pathChunks;
     public GameObject thingToLookAt;
+    public CameraPathChunk startChunk;
+    private CameraPathChunk currentChunk;
 
     public float cameraMoveSpeed = 3f;
 
     private GameObject[] chunkNodesArray;
-    private GameObject currentNode;
+    private GameObject currentNodeLeft;
+    private GameObject currentNodeRight;
 
-	// Use this for initialization
-	void Start () {
-		
+    private bool onTrack;
+
+    // Use this for initialization
+    void Start () {
+        if (startChunk != null)
+        {
+            onTrack = true;
+            currentChunk = startChunk;
+            currentNodes();
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//use nodes as constraints - x, y,and z?
-        //follow thing to look at
-        //look at the thing even when you cannot move
         
-        //when you have reached the exit trigger load the next set of nodes
 	}
+
+    private void currentNodes()
+    {
+
+    }
+
+    public void chunkChange(CameraPathChunk newChunk)
+    {
+
+    }
 }
