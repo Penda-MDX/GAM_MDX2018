@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Fire
   - Movable
+  - SpeedUp
+  - SpeedDown
+  - TimeBonus
+  - StartCountDown
   layers:
   - Default
   - TransparentFX

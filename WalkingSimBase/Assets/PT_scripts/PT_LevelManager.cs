@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PT_LevelManager : MonoBehaviour {
 
     public Transform lastGoodCheckpoint;
+    public PT_Complex_CC_Jump playerCharConrol;
 
     public Canvas infoBar;
     public Canvas messageBox;
@@ -27,6 +28,8 @@ public class PT_LevelManager : MonoBehaviour {
 
     private bool timerRunning;
     private float timerStart;
+    private float timerEnd;
+    private bool countDown;
     private int timerHours;
     private int timerMinutes;
     private int timerSeconds;
@@ -43,11 +46,21 @@ public class PT_LevelManager : MonoBehaviour {
         timerMinutes = 0;
         timerSeconds = 0;
         timerRunning = false;
+        countDown = false;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (countDown && (timerEnd - Time.time)<=0)
+        {
+            // time to die
+            playerCharConrol.FallToDeath();
+            countDown = false;
+
+        }
+
+
         if (timeComplete < Time.time)
         {
             if (messageTextonScreen != null)
@@ -65,7 +78,7 @@ public class PT_LevelManager : MonoBehaviour {
             }
             else
             {
-                StartTimer();
+                StartTimer(0f);
             }
         }
         ComposeStatus();
@@ -85,13 +98,23 @@ public class PT_LevelManager : MonoBehaviour {
 
     public void ComposeStatus()
     {
+        //date time stuff
         var culture = new CultureInfo("en-GB");
         date = System.DateTime.Now.ToString(culture);
         float timeSoFar = 0; 
 
+        //
         if (timerRunning)
         {
-            timeSoFar = Time.time - timerStart;
+            if (countDown)
+            {
+                timeSoFar = timerEnd - Time.time;
+            }
+            else
+            {
+                timeSoFar = Time.time - timerStart;
+            }
+            
             //print("Timer " + timeSoFar);
             timerHours = Mathf.FloorToInt(timeSoFar/3600f);
             timerMinutes = Mathf.FloorToInt((timeSoFar%3600f)/60);
@@ -111,9 +134,15 @@ public class PT_LevelManager : MonoBehaviour {
 
     }
 
-    public void StartTimer()
+    public void StartTimer(float timerLength)
     {
         timerStart = Time.time;
+        if (timerLength>0f)
+        {
+            countDown = true;
+            timerEnd = Time.time + timerLength;
+        }
+        
         timerRunning = true;
     }
 
@@ -123,5 +152,14 @@ public class PT_LevelManager : MonoBehaviour {
         timerMinutes = 0;
         timerSeconds = 0;
         timerRunning = false;
+        countDown = false;
+    }
+
+    public void BonusTime(float timeValue)
+    {
+        if (countDown)
+        {
+            timerEnd += timeValue;
+        }
     }
 }

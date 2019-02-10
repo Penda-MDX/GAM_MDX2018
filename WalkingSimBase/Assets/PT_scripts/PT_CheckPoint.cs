@@ -40,7 +40,13 @@ public class PT_CheckPoint : MonoBehaviour {
     {
         foreach(GameObject thingReseting in thingsToBeReset)
         {
+            if (!thingReseting.activeSelf)
+            {
+                thingReseting.SetActive(true);
+            }
+
             thingReseting.SendMessage("ResetMe", SendMessageOptions.DontRequireReceiver);
+            
         }
     }
 }
