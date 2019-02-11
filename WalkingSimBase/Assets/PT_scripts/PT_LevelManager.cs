@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class PT_LevelManager : MonoBehaviour {
 
     public Transform lastGoodCheckpoint;
-    public PT_Complex_CC_Jump playerCharConrol;
+    public PT_CC_W_PowerUps playerCharConrol;
 
     public Canvas infoBar;
     public Canvas messageBox;

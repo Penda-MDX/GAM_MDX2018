@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PT_Complex_CC_Jump : MonoBehaviour {
+public class PT_CC_W_PowerUps : MonoBehaviour {
 
-    public float fl_MovementSpeed = 6f;
+    public float movementSpeed = 6f;
     public float AirMovementSpeed = 3f;
+    public float speedUpAmount;
+    public float speedDownAmount;
+    public float powerUpTime = 1.0f;
+
     public float fl_gravity = 15f;
     public float fl_JumpForce = 8.0f;
     public float fallMultiplier = 2.0f;
@@ -14,23 +18,40 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
     private CharacterController cc_Reference_To_Character_Controller;
     private PT_LevelManager levelManagerReference;
     private bool canJumpAgain = true;
+    private float startSpeed;
+    private float startAirSpeed;
+
+    private bool timer;
+    private float timeOut;
 
     // Use this for initialization
     void Start()
     {
+        startSpeed = movementSpeed;
+        startAirSpeed = AirMovementSpeed;
         cc_Reference_To_Character_Controller = GetComponent<CharacterController>();
         levelManagerReference = GameObject.Find("LevelManager").GetComponent<PT_LevelManager>();
     }
     // Update is called once per frame
     void Update()
     {
+        if (timer)
+        {
+            if (timeOut < Time.time)
+            {
+                timer = false;
+                ResetSpeed();
+            }
+        }
+
+
         //
         if (cc_Reference_To_Character_Controller.isGrounded)
         {
             canJumpAgain = true;
             V3_move_direction.y = 0;
 
-            MovePC(fl_MovementSpeed);
+            MovePC(movementSpeed);
 
         }
         else
@@ -74,12 +95,52 @@ public class PT_Complex_CC_Jump : MonoBehaviour {
             transform.forward = heading;
         }
     }
-    void FallToDeath()
+    public void FallToDeath()
     {
         transform.position = levelManagerReference.lastGoodCheckpoint.position;
         //levelManagerReference.lastGoodCheckpoint.gameObject.SendMessage("ResetThisZone", SendMessageOptions.DontRequireReceiver);
         levelManagerReference.lastGoodCheckpoint.gameObject.GetComponent<PT_CheckPoint>().ResetThisZone();
+        ResetSpeed();
     }
 
+    public void ChangeSpeed(float changeValue)
+    {
+        movementSpeed += changeValue;
+        AirMovementSpeed += changeValue;
+        timer = true;
+        timeOut = Time.time + powerUpTime;
+    }
 
+    public void ResetSpeed()
+    {
+        movementSpeed = startSpeed;
+        AirMovementSpeed = startAirSpeed;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "SpeedUp":
+                ChangeSpeed(speedUpAmount);
+                other.gameObject.SetActive(false);
+                break;
+            case "SpeedDown":
+                ChangeSpeed(speedDownAmount);
+                other.gameObject.SetActive(false);
+                break;
+            case "TimeBonus":
+                levelManagerReference.BonusTime(20f);
+                other.gameObject.SetActive(false);
+                break;
+            case "StartCountDown":
+                //setup script on the trigger and check for time to go
+                levelManagerReference.StartTimer(30f);
+                other.gameObject.SetActive(false);
+                break;
+            default:
+
+                break;
+        }
+    }
 }
