@@ -10,6 +10,8 @@ TagManager:
   - SpeedDown
   - TimeBonus
   - StartCountDown
+  - GravityChange
+  - GravityDown
   layers:
   - Default
   - TransparentFX

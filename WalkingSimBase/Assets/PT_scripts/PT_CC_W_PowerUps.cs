@@ -138,6 +138,17 @@ public class PT_CC_W_PowerUps : MonoBehaviour {
                 levelManagerReference.StartTimer(30f);
                 other.gameObject.SetActive(false);
                 break;
+            case "GravityChange":
+                //Physics.gravity = new Vector3(0, 5f, 0);
+                fl_gravity = -5f;
+                print(cc_Reference_To_Character_Controller.isGrounded);
+                break;
+
+            case "GravityDown":
+                //Physics.gravity = new Vector3(0, 5f, 0);
+                fl_gravity = 5f;
+                print(cc_Reference_To_Character_Controller.isGrounded);
+                break;
             default:
 
                 break;
